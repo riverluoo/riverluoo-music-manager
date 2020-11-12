@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: local
+
+server:
+  servlet:
+    context-path: /api
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+  compression:
+    enabled: true
+    mime-types: application/json
+    min-response-size: 1024
+  tomcat:
+    connection-timeout: 30
+    uri-encoding: UTF-8
+  port: 8090
