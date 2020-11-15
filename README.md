@@ -5,3 +5,5 @@
 [DDD之代码架构](https://yasinshaw.com/articles/112)
 
 [DDD设计讲解](https://juejin.im/post/6891942428321218568)
+
+[四色建模方法](https://www.infoq.cn/article/xh-four-color-modeling)
