@@ -3,12 +3,14 @@ package com.riverluoo.music.infra.HttpResult;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 
+import java.io.Serializable;
+
 /**
  * @author: wangyang
  * @since: 2020-11-13 13:33
  */
 @AllArgsConstructor
-public class HttpResult<T> {
+public class HttpResult<T> implements Serializable {
     public int code;
 
     public String message;
