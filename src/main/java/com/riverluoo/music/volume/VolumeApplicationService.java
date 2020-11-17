@@ -6,6 +6,7 @@ import com.riverluoo.music.infra.persistence.mybatisplus.LuooVolumeMapper;
 import com.riverluoo.music.volume.command.VolumeListQuery;
 import com.riverluoo.music.volume.representation.VolumeListRepresentation;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,10 +25,10 @@ public class VolumeApplicationService {
 
 
     public Page<VolumeListRepresentation> fuzzySearch(Page page, VolumeListQuery volumeListQuery) {
-        Page selectMapsPage = this.luooVolumeMapper.selectMapsPage(page, new QueryWrapper<LuooVolume>().eq("id", volumeListQuery));
-        List<LuooVolume> luooVolumeList = selectMapsPage.getRecords();
+        Page selectPage = this.luooVolumeMapper.selectPage(page, new QueryWrapper<LuooVolume>().eq(StringUtils.isNotBlank(volumeListQuery.getId()), "id", volumeListQuery.getId()));
+        List<LuooVolume> luooVolumeList = selectPage.getRecords();
 
-        return  selectMapsPage.setRecords(luooVolumeList.stream().map(luooVolume -> this.representationFactory.toVolumeListRepresentation(luooVolume)).collect(Collectors.toList()));
+        return  selectPage.setRecords(luooVolumeList.stream().map(luooVolume -> this.representationFactory.toVolumeListRepresentation(luooVolume)).collect(Collectors.toList()));
     }
 
 
