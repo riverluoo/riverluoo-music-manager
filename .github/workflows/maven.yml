@@ -27,7 +27,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Push Docker
-        run: |
+        run:
           docker login --username=${{ secrets.DOCKER_USERNAM }} --password ${{ secrets.DOCKER_PASSWORD }} registry.cn-hangzhou.aliyuncs.com
           docker build . -t ${{ secrets.REGISTRY }}:$GITHUB_RUN_NUMBER
           docker push ${{ secrets.REGISTRY }}:$GITHUB_RUN_NUMBER
