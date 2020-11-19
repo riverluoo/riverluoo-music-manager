@@ -1,5 +1,6 @@
 package com.riverluoo.music.volume;
 
+import com.riverluoo.music.volume.command.VolumeUpdateCommand;
 import com.riverluoo.music.volume.representation.VolumeListRepresentation;
 import org.springframework.stereotype.Component;
 
@@ -23,6 +24,14 @@ public class RepresentationFactory {
                 .remark(luooVolume.getRemark())
                 .thank(luooVolume.getThank())
                 .number(luooVolume.getNumber())
+                .build();
+    }
+
+    public LuooVolume toLuooVolume(VolumeUpdateCommand volumeUpdateCommand){
+        return LuooVolume
+                .builder()
+                .id(volumeUpdateCommand.getId())
+                .url(volumeUpdateCommand.getUrl())
                 .build();
     }
 

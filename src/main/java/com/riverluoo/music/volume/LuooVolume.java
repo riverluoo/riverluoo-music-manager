@@ -9,6 +9,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import java.time.LocalDateTime;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -27,6 +29,12 @@ public class LuooVolume {
     private Integer remark;
     private Integer thank;
     private Integer number;
+    private LocalDateTime  updateTime;
+
+
+    public void update(){
+        this.updateTime=LocalDateTime.now();
+    }
 
 
 
