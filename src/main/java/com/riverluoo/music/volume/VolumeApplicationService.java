@@ -24,18 +24,18 @@ import java.util.stream.Collectors;
 public class VolumeApplicationService {
 
     private final LuooVolumeMapper luooVolumeMapper;
-    private final RepresentationFactory representationFactory;
+    private final VolumeRepresentationFactory volumeRepresentationFactory;
 
 
     public Page<VolumeListRepresentation> fuzzySearch(Page page, VolumeListQuery volumeListQuery) {
         Page selectPage = this.luooVolumeMapper.selectPage(page, new QueryWrapper<LuooVolume>().eq(StringUtils.isNotBlank(volumeListQuery.getId()), "id", volumeListQuery.getId()));
         List<LuooVolume> luooVolumeList = selectPage.getRecords();
 
-        return selectPage.setRecords(luooVolumeList.stream().map(this.representationFactory::toVolumeListRepresentation).collect(Collectors.toList()));
+        return selectPage.setRecords(luooVolumeList.stream().map(this.volumeRepresentationFactory::toVolumeListRepresentation).collect(Collectors.toList()));
     }
 
     public void update(VolumeUpdateCommand volumeUpdateCommand) {
-        LuooVolume luooVolume = this.representationFactory.toLuooVolume(volumeUpdateCommand);
+        LuooVolume luooVolume = this.volumeRepresentationFactory.toLuooVolume(volumeUpdateCommand);
         luooVolume.update();
 
         this.luooVolumeMapper.updateById(luooVolume);

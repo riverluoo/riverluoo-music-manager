@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since: 2020-11-13 13:28
  */
 @RestController
-@RequestMapping("/song")
+@RequestMapping("/volume")
 @RequiredArgsConstructor
 public class LuooVolumeController {
 

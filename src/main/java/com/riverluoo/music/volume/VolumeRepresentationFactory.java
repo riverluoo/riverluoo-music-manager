@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @since: 2020-11-13 13:53
  */
 @Component
-public class RepresentationFactory {
+public class VolumeRepresentationFactory {
 
     public VolumeListRepresentation toVolumeListRepresentation(LuooVolume luooVolume) {
         return VolumeListRepresentation
