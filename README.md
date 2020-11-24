@@ -7,3 +7,5 @@
 [DDD设计讲解](https://juejin.im/post/6891942428321218568)
 
 [四色建模方法](https://www.infoq.cn/article/xh-four-color-modeling)
+
+[DDD概念](https://juejin.cn/post/6865536926498652168)

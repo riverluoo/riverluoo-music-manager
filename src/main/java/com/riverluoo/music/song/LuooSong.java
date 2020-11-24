@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import java.time.LocalDateTime;
+
 
 @Data
 @Builder
@@ -24,8 +26,12 @@ public class LuooSong {
     private Double time;
     private String music;
     private String url;
+    private LocalDateTime updateTime;
 
 
+    public void update() {
+        this.updateTime = LocalDateTime.now();
+    }
 
 
 }

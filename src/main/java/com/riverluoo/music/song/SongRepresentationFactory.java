@@ -1,13 +1,14 @@
 package com.riverluoo.music.song;
 
 
+import com.riverluoo.music.song.command.SongUpdateCommand;
 import com.riverluoo.music.song.representation.SongListRepresentation;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SongRepresentationFactory {
 
-    public SongListRepresentation toSongListRepresentation(LuooSong luooSong){
+    public SongListRepresentation toSongListRepresentation(LuooSong luooSong) {
         return SongListRepresentation
                 .builder()
                 .id(luooSong.getId())
@@ -20,6 +21,14 @@ public class SongRepresentationFactory {
                 .time(luooSong.getTime())
                 .music(luooSong.getMusic())
                 .url(luooSong.getUrl())
+                .build();
+    }
+
+    public LuooSong toLuooSong(SongUpdateCommand songUpdateCommand) {
+        return LuooSong
+                .builder()
+                .id(songUpdateCommand.getId())
+                .url(songUpdateCommand.getUrl())
                 .build();
     }
 
