@@ -6,12 +6,12 @@ import com.riverluoo.music.song.representation.SongListRepresentation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-
 
 @RestController
 @RequestMapping("/song")
@@ -27,7 +27,7 @@ public class LuooSongController {
     }
 
     @PutMapping
-    public HttpResult<Void> update(@RequestParam SongUpdateCommand songUpdateCommand) {
+    public HttpResult<Void> update(@RequestBody SongUpdateCommand songUpdateCommand) {
         this.songApplicationService.update(songUpdateCommand);
 
         return HttpResult.success();
