@@ -8,7 +8,6 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
  * @author: wangyang
  * @since: 2020-11-12 14:43
  */
-@EnableOpenApi
 @SpringBootApplication
 public class MusicManageApplication {
 
