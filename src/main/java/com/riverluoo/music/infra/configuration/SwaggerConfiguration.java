@@ -21,7 +21,6 @@ public class SwaggerConfiguration {
     public Docket api() {
         return new Docket(OAS_30)
                 .apiInfo(apiInfo())
-                .host("http://39.96.69.79:8090")
                 .enable(true)
                 .select()
                 .apis(basePackage("com.riverluoo.music"))
