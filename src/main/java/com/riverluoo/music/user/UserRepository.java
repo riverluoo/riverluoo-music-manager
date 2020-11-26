@@ -13,7 +13,6 @@ public class UserRepository {
 
     public void save(LuooUser luooUser){
 
-
         this.luooUserMapper.insert(luooUser);
     }
 
