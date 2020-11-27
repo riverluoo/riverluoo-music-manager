@@ -10,6 +10,4 @@
 
 [DDD概念](https://juejin.cn/post/6865536926498652168)
 
-## Api Documentation
-
-[http://localhost:8090/api/swagger-ui/index.html](http://localhost:8090/api/swagger-ui/index.html#/)
+[领域驱动设计在马蜂窝优惠中心重构中的实践](https://juejin.cn/post/6844903888227663879)
