@@ -55,11 +55,6 @@ master 分支为主干分支，长期存在。release 分支为最近线上代�
 
 ### Git 提交规范
 
-配置用户信息
-
-```sh
-git config --global user.name "Your Name"
-git config --global user.email "Your Name @thoughtworks.com"
 ```
 
 提交信息格式：
