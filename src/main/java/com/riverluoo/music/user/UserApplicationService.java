@@ -1,6 +1,7 @@
 package com.riverluoo.music.user;
 
 import com.riverluoo.music.user.command.CreateUserCommand;
+import com.riverluoo.music.user.command.UserLoginCommand;
 import com.riverluoo.music.user.model.LuooUser;
 import com.riverluoo.music.user.model.UserId;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,11 @@ public class UserApplicationService {
         userRepository.save(luooUser);
 
         return luooUser.getId();
+    }
+
+    public void login(UserLoginCommand command){
+
+
     }
 
 }

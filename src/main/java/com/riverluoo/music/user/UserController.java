@@ -3,6 +3,7 @@ package com.riverluoo.music.user;
 
 import com.riverluoo.music.infra.HttpResult.HttpResult;
 import com.riverluoo.music.user.command.CreateUserCommand;
+import com.riverluoo.music.user.command.UserLoginCommand;
 import com.riverluoo.music.user.model.UserId;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +23,12 @@ public class UserController {
     public HttpResult<UserId> create(@RequestBody CreateUserCommand command) {
 
         return HttpResult.success(this.userApplicationService.createUser(command));
+    }
+
+    public HttpResult<Void> login(@RequestBody UserLoginCommand command){
+        this.userApplicationService.login(command);
+
+        return HttpResult.success();
     }
 
 
