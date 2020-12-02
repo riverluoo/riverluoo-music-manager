@@ -11,3 +11,5 @@
 [DDD概念](https://juejin.cn/post/6865536926498652168)
 
 [领域驱动设计在马蜂窝优惠中心重构中的实践](https://juejin.cn/post/6844903888227663879)
+
+[实现值对象](https://docs.microsoft.com/zh-cn/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/implement-value-objects)
