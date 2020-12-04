@@ -1,5 +1,7 @@
 package com.riverluoo.music.user.model;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.extension.handlers.FastjsonTypeHandler;
 import com.riverluoo.music.infra.utils.Address;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDateTime;
 
+import static com.riverluoo.music.infra.utils.UuidGenerator.newUuid;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -16,17 +20,19 @@ import java.time.LocalDateTime;
 @Slf4j
 public class LuooUser {
 
-    private UserId id;
+    private String id;
     private String name;
     private String portrait;
     private String password;
+    @TableField(typeHandler = FastjsonTypeHandler.class)
     private Address address;
+    @TableField(typeHandler = FastjsonTypeHandler.class)
     private UserAccount userAccount;
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
 
     private LuooUser(String name, String password, String portrait, Address address, UserAccount userAccount) {
-        this.id = UserId.newUserId();
+        this.id = newUuid();
         this.name = name;
         this.portrait = portrait;
         this.password = password;

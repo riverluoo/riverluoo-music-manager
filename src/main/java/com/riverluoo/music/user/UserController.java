@@ -4,7 +4,6 @@ package com.riverluoo.music.user;
 import com.riverluoo.music.infra.HttpResult.HttpResult;
 import com.riverluoo.music.user.command.CreateUserCommand;
 import com.riverluoo.music.user.command.UserLoginCommand;
-import com.riverluoo.music.user.model.UserId;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +19,7 @@ public class UserController {
 
 
     @PostMapping
-    public HttpResult<UserId> create(@RequestBody CreateUserCommand command) {
+    public HttpResult<String> create(@RequestBody CreateUserCommand command) {
 
         return HttpResult.success(this.userApplicationService.createUser(command));
     }
