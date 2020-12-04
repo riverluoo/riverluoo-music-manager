@@ -21,7 +21,7 @@ import static com.riverluoo.music.infra.utils.UuidGenerator.newUuid;
 public class LuooUser {
 
     private String id;
-    private String name;
+    private String username;
     private String portrait;
     private String password;
     @TableField(typeHandler = FastjsonTypeHandler.class)
@@ -31,9 +31,9 @@ public class LuooUser {
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
 
-    private LuooUser(String name, String password, String portrait, Address address, UserAccount userAccount) {
+    private LuooUser(String username, String password, String portrait, Address address, UserAccount userAccount) {
         this.id = newUuid();
-        this.name = name;
+        this.username = username;
         this.portrait = portrait;
         this.password = password;
         this.address = address;
@@ -42,8 +42,8 @@ public class LuooUser {
     }
 
 
-    public static LuooUser create(String name, String password, String portrait, Address address, UserAccount userAccount) {
-        return new LuooUser(name, password, portrait, address, userAccount);
+    public static LuooUser create(String username, String password, String portrait, Address address, UserAccount userAccount) {
+        return new LuooUser(username, password, portrait, address, userAccount);
     }
 
 

@@ -13,7 +13,7 @@ public class UserApplicationService {
     private final UserRepository userRepository;
 
     public String createUser(CreateUserCommand command) {
-        LuooUser luooUser = LuooUser.create(command.getName(), command.getPassword(), command.getPortrait(), command.getAddress(), command.getUserAccount());
+        LuooUser luooUser = LuooUser.create(command.getUsername(), command.getPassword(), command.getPortrait(), command.getAddress(), command.getUserAccount());
         userRepository.save(luooUser);
 
         return luooUser.getId();

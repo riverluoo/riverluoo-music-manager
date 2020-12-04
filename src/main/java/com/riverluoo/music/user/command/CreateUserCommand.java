@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class CreateUserCommand {
 
-    private String name;
+    private String username;
     private String portrait;
     private String password;
     private Address address;
