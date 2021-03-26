@@ -1,5 +1,6 @@
 package com.riverluoo.music.infra.configuration;
 
+import com.riverluoo.music.infra.security.JwtTokenFilter;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

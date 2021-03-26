@@ -1,5 +1,6 @@
-package com.riverluoo.music.infra.configuration;
+package com.riverluoo.music.infra.security;
 
+import com.riverluoo.music.infra.security.JwtTokenUtil;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

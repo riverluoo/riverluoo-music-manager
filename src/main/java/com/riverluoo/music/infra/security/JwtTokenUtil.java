@@ -1,4 +1,4 @@
-package com.riverluoo.music.infra.configuration;
+package com.riverluoo.music.infra.security;
 
 import com.riverluoo.music.user.model.LuooUser;
 import io.jsonwebtoken.Claims;
